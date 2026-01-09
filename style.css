@@ -124,7 +124,6 @@ section.view1 #ourstory {
 section.view2 {
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 1rem;
   gap: 1rem;
 }
