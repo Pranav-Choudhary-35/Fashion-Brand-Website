@@ -1,12 +1,22 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -21,93 +31,142 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;   /* stretch instead of center */
   gap: 15%;
-
- 
+  width: 100%;
 }
- section.view1 {
+
+section.view1,
+section.view2,section.view3 {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;       /* prevent overflow */
+}
+
+section.view1 {
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  gap: 1rem;
+  padding: 1rem;
+
+  img {
+    max-width: 100%;      /* prevent image overflow */
+    height: auto;
+    display: block;
+    border-radius: 5%;
+  }
+
+  .bottom {
+    padding: 1rem;
+    background-color: #212020;
+    border-radius: 5%;
+  }
+
+  #studio {
+    letter-spacing: 0.2rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  p {
+    padding: 1rem;
+    line-height: 2rem;
+    opacity: 0.5;
+    font-weight: 100;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-weight: 350;
+    font-size: xxx-large;
+    opacity: 0.9;
+  }
+
+  .text {
+    padding: 1rem;
+  }
+
+  #uppercase {
+    text-transform: uppercase;
+  }
+
+  .paragraph {
+    padding: 1rem 0;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  button {
+    color: #212020;
+    background-color: #212020;
+  }
+
+  #arrow {
+    border: 1px solid rgb(84, 84, 84);
+    margin-right: 0.3rem;
+    border-radius: 50%;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  #ourstory {
+    padding-left: 0.3rem;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
+}
+
+section.view2 {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+
+  .top,
+  .bottom {
     display: flex;
     flex-direction: column;
-    color: aliceblue;
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 1600px;
+    width: 100%;
 
-    img {
-      width: 100%;
-      border-radius: 5%;
-    }
-
-    .bottom {
-      padding: 1rem;
-      background-color: #212020;
-      border-radius: 5%;
-    }
-
-    #studio {
-      letter-spacing: 0.2rem;
-      color: white;
-      font-weight: 500;
-      font-size: 1rem;
-    }
-
-    p {
-      padding: 1rem;
-      line-height: 2rem;
-      opacity: 0.5;
-      font-weight: 100;
-      font-size: 1.5rem;
-    }
-
-    h1 {
-      font-weight: 350;
-      font-size: xxx-large;
-      opacity: 0.9;
-    }
-
-    .text {
-      padding: 1rem;
-    }
-
-    #uppercase {
-      text-transform: uppercase;
-    }
-
-    .paragraph {
-      padding: 1rem 0;
-    }
-
-    .flex {
+    .element {
       display: flex;
-    }
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
 
-    button {
-      color: #212020;
-      background-color: #212020;
-    }
+      h2 {
+        font-size: 3rem;
+        font-weight: 300;
+      }
 
-    #arrow {
-      border: 1px solid rgb(84, 84, 84);
-      margin-right: 0.3rem;
-      border-radius: 50%;
-      display: flex;
-      height: 20px;
-      width: 20px;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      small {
+        font-size: 1rem;
+        opacity: 0.5;
+      }
     }
+  }
+}
+section.view3{
+  padding: 1rem;
+  .top img{
+    width: 100%;
+    display: block;
+  }
+}
 
-    #ourstory {
-      padding-left: 0.3rem;
-      font-weight: 300;
-      font-size: 1rem;
-      letter-spacing: 0.1rem;
-      cursor: pointer;
-    }
-
-    @media (min-width: 900px) {
+@media (min-width: 900px) {
+  main {
+    section.view1 {
       flex-direction: row;
 
       .top,
@@ -136,20 +195,24 @@ main {
         }
       }
     }
-  }
 
-//Section 2
- section.view2{
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-    .top{
-        display: flex;
-        flex-direction: column;
+    section.view2 {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .top,
+      .bottom {
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-around;
+        align-items: center;
+
+        .element {
+          flex: 1;
+          text-align: center;
+        }
+      }
     }
-    .bottom{
-        display: flex;
-        flex-direction: column;
-    }
+  }
 }

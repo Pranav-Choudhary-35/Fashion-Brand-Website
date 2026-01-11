@@ -1,12 +1,22 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -21,8 +31,17 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* stretch instead of center */
   gap: 15%;
+  width: 100%;
+}
+
+section.view1,
+section.view2, section.view3 {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden; /* prevent overflow */
 }
 
 section.view1 {
@@ -31,10 +50,11 @@ section.view1 {
   color: aliceblue;
   gap: 1rem;
   padding: 1rem;
-  max-width: 1600px;
 }
 section.view1 img {
-  width: 100%;
+  max-width: 100%; /* prevent image overflow */
+  height: auto;
+  display: block;
   border-radius: 5%;
 }
 section.view1 .bottom {
@@ -94,44 +114,84 @@ section.view1 #ourstory {
   letter-spacing: 0.1rem;
   cursor: pointer;
 }
+
+section.view2 {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+}
+section.view2 .top,
+section.view2 .bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+section.view2 .top .element,
+section.view2 .bottom .element {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+}
+section.view2 .top .element h2,
+section.view2 .bottom .element h2 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+section.view2 .top .element small,
+section.view2 .bottom .element small {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+section.view3 {
+  padding: 1rem;
+}
+section.view3 .top img {
+  width: 100%;
+  display: block;
+}
+
 @media (min-width: 900px) {
-  section.view1 {
+  main section.view1 {
     flex-direction: row;
   }
-  section.view1 .top,
-  section.view1 .bottom {
+  main section.view1 .top,
+  main section.view1 .bottom {
     width: 50%;
   }
-  section.view1 .bottom {
+  main section.view1 .bottom {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 3rem;
   }
-  section.view1 .bottom .text {
+  main section.view1 .bottom .text {
     gap: 1.5rem;
   }
-  section.view1 .bottom h1 {
+  main section.view1 .bottom h1 {
     margin-top: -2rem;
     font-size: 3rem;
   }
-  section.view1 .bottom p {
+  main section.view1 .bottom p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
-}
-
-section.view2 {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
-}
-section.view2 .top {
-  display: flex;
-  flex-direction: column;
-}
-section.view2 .bottom {
-  display: flex;
-  flex-direction: column;
+  main section.view2 {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main section.view2 .top,
+  main section.view2 .bottom {
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  main section.view2 .top .element,
+  main section.view2 .bottom .element {
+    flex: 1;
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */
