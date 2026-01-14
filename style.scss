@@ -39,7 +39,7 @@ main {
 
 section.view1,
 section.view2,
-section.view3 ,section.view4{
+section.view3 ,section.view4,section.view5,section.view6 ,section.view7,section.view8{
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
@@ -261,7 +261,7 @@ section.view4 {
     font-size: 1.5rem;
   }
   .Para p{
-display: inline;
+// display: inline;
 margin: 0;
   opacity: 0.7;
     font-weight: 300;
@@ -288,7 +288,29 @@ margin: 0;
   }
 }
 }
+section.view5 h1{
+  padding: 1rem;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  font-size:2rem;
 
+  letter-spacing: .2rem;
+  font-weight: 350;
+}
+section.view6{
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  
+  .card{
+width: 100%;
+background-image: url("https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbd7d003dfb6a1bdecb_team-01.webp");
+background-size: cover;
+border-radius: 5%;
+aspect-ratio: 1/1;
+  }
+}
 
 
 //destop view
@@ -346,7 +368,7 @@ margin: 0;
 
     section.view3 {
       flex-direction: row;
-      gap: 2rem; /* optional spacing between halves */
+      gap: 1rem; /* optional spacing between halves */
 
       .top,
       .bottom {
@@ -370,7 +392,7 @@ margin: 0;
      section.view4 {
       flex-direction: row;
       justify-content: space-between;
-      gap: 2rem; /* optional spacing between halves */
+      gap: 1rem; /* optional spacing between halves */
 
       .top,
       .bottom {
