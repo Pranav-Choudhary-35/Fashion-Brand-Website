@@ -468,12 +468,61 @@ main {
 .background{
   background-color: #cebd63;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   .top{
 padding: 1rem;
+
+#contact{
+      padding: 1rem;
+    letter-spacing: .04rem;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1rem;
+   
+  }
+  
   }
   .bottom{
 padding: 1rem;
+h1{
+          font-weight: 350;
+    font-size: xxx-large;
+   color: #000000;
+    padding: 0 0 2rem 1rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;  
   }
+    .Button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000000;
+      padding: .8rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border-radius: .7rem;
+       cursor: pointer;
+       margin-bottom: 1rem;
+      .btnn{
+        color: white;
+        background-color: black;
+        border: hidden;
+         font-weight: 400;
+    letter-spacing: .04rem;
+    word-spacing: .4rem;
+    font-size: 1rem;
+   cursor: pointer;
+    #arrow{
+    
+    font-size: x-large;  
+     cursor: pointer;
+    }
+      }
+    }
+  }
+ 
 }
   }
  }
@@ -640,5 +689,69 @@ padding: 1rem;
         }
       }
     }
+ section.view8 {
+  .background {
+    background-color: #cebd63;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .top {
+      padding: 1rem;
+
+      #contact {
+        padding: 2rem;
+        letter-spacing: .04rem;
+        color: #000000;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+
+    .bottom {
+      padding: 2rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      h1 {
+        font-weight: 350;
+        font-size: xxx-large;
+        color: #000000;
+        padding: 0 0 2rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .Button {
+        background-color: transparent; // container transparent
+        padding: 0; 
+        margin: 0 auto; 
+        border-radius: 0;
+
+        .btnn {
+          background-color: #000000; 
+          color: #ffffff; 
+          padding: 0.6rem 1.2rem; 
+          border-radius: 0.5rem;
+          border: none; 
+          font-size: 1rem;
+          cursor: pointer;
+        }
+
+        #arrow {
+          font-size: x-large;  
+          cursor: pointer;
+        }
+      }
+    }
   }
+}
+
+}
+
 }
